@@ -15,7 +15,9 @@
 
 * game engine test suite :
 >  bundle exec rspec
+
 >  rspec spec/lib/GameEngine_spec.rb
+
 >  rspec spec/controllers/chifoumi_controller_spec.rb
 
 * running the back-end :
