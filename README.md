@@ -14,7 +14,8 @@
   rails db:migrate
 
 * game engine test suite :
-  rspec ./lib/GameEngine_spec.rb
+  rspec spec/lib/GameEngine_spec.rb
+  rspec spec/controllers/chifoumi_controller_spec.rb
 
 * running the back-end :
   rails s

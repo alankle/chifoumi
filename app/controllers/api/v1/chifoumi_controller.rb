@@ -4,17 +4,15 @@ class Api::V1::ChifoumiController < ApplicationController
 
   include GameEngine
 
-  def index
+  def new
     GameEngine.player params[:name]
     GameEngine.player_move params[:move]
     result_play = GameEngine.play_json
     if save_play(result_play).has_key? :OK
-        render json: result_play
+      render json: result_play
     else
-        render json: { error: 'Unable to save Score' }, status: 400   
+      render json: { error: 'Unable to save Score' }, status: 400
     end
-
-    
   end
 
   private
@@ -33,10 +31,10 @@ class Api::V1::ChifoumiController < ApplicationController
     score.botmove = bot_move[:move]
     score.result = winner
 
-    if score.save 
-        {OK: "Score Save"}
+    if score.save
+      { OK: 'Score Save' }
     else
-        {error: "Unable to save Score"}
+      { error: 'Unable to save Score' }
     end
   end
 
