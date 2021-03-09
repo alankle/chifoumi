@@ -26,7 +26,7 @@
 * Send data player :
 >  curl -H "Accept: application/json" -H "Content-type: application/json" -d '{"name":"Ponky","move":"rock"}'  http://localhost:3000/api/v1/chifoumis
 
-* Deployed version available on Heroku on, could be used instead of localhost:3000 :
+* Deployed version available on Heroku, could be used instead of localhost:3000 :
 > https://shrouded-stream-94460.herokuapp.com/api/v1/chifoumis
 
 
