@@ -13,15 +13,20 @@ module GameEngine
 
   def self.game_rules
     {
-      'rock': ['scissors'],
-      'paper': ['rock'],
-      'scissors': ['paper']
+      # 'rock': ['scissors'],
+      # 'paper': ['rock'],
+      # 'scissors': ['paper']
+      'spock': 'scissors rock',
+      'lizard': 'spock paper',
+      'scissors': 'lizard paper',
+      'paper': 'rock spock',
+      'rock': 'lizard scissors'
     }
   end
 
   def self.bot_move
     randomizer = @seed ? Random.new(@seed) : Random.new(Random.new_seed)
-    move = %w[rock paper scissors]
+    move = %w[rock paper scissors spock lizard]
     move.sample(random: randomizer)
   end
 

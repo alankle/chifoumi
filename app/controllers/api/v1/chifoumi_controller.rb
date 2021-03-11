@@ -1,6 +1,6 @@
 class Api::V1::ChifoumiController < ApplicationController
   # skip_before_action :verify_authenticity_token
-  
+
   include GameEngine
 
   def new
@@ -12,6 +12,11 @@ class Api::V1::ChifoumiController < ApplicationController
     else
       render json: { error: 'Unable to save Score' }, status: 400
     end
+  end
+
+  def index
+    @scores = Score.all
+    render json: @scores
   end
 
   private
